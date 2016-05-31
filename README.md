@@ -1,18 +1,17 @@
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
 
 
-Hi there! Welcome to Cloud9 IDE!
 
-To get you started, create some files, play with the terminal,
-or visit http://docs.c9.io for our documentation.
-If you want, you can also go watch some training videos at
-http://www.youtube.com/user/c9ide.
+Hi there! 
+npm init 
+uses webpack 
+babel 
+eslint and I believe mocha for testing
+but I am not useing testing  
+to start server 
+ npm run start 
+will render in: localhost:8080
+there is a debugger in the Heatmap component so it will create a breakpoint mid render
 
-Happy coding!
-The Cloud9 IDE team
+
+
