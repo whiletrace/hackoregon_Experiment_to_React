@@ -1,42 +1,33 @@
 import { default as React, Component } from 'react'
-import ReactDom from 'react-dom'
 import { GoogleMapLoader, GoogleMap, Polygon } from 'react-google-maps'
 import Shapes from './Heatmap'
-export default class MapComponent extends Component { constructor() {
+export default class MapComponent extends Component {
  // sets initial state
-  super()
-}
-  
- // render
   render() {
     return (
-      //this this starts google-react-maps
-     <GoogleMapLoader
-     //container element div for the map 
-       containerElement={
-        <div
-         style={{
-            height: '100%',
-          }}
-        />
-       }
-       googleMapElement = {
-       /*google map react component with properties has access to the json data via the Data prop also added a call to the geo json these are set in the  default props*/
-        <GoogleMap
-	      defaultZoom={13}
-	      defaultCenter={ { lat: 45.52306220000001, lng: -122.67648159999999 }} > 
-            <Shapes data ={this.props.data}/>
-
-
-          
+    <GoogleMapLoader
+      containerElement={
+      <div
+        style={{
+          height: '100%',
+        }}
+      />
+     }
+      googleMapElement = {
+      <GoogleMap
+        defaultZoom={13}
+        defaultCenter={ { lat: 45.52306220000001, lng: -122.67648159999999 }}
+      >
+        <Shapes data ={this.props.data} />
       </GoogleMap>
-       }
-     />
-  )
+      }
+    />
+   )
   }
-  // default properties for the map
 }
 MapComponent.propTypes = {
+  map: React.PropTypes.object,
+  data: React.PropTypes.object,
   running: React.PropTypes.bool,
   monthIndex: React.PropTypes.number,
   hslMaxValue: React.PropTypes.number,
@@ -62,3 +53,4 @@ MapComponent.defaultProps = {
     fillColor: 'black',
   },
 }
+

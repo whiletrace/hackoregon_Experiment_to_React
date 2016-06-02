@@ -1,15 +1,9 @@
 import { default as React, Component } from 'react'
-import ReactDom from 'react-dom'
 import MapComponent from './MapComponent'
 import Shapes from './Heatmap'
-// creates  the component
-
 export default class SimpleMap extends Component { constructor() {
- // sets initial state
   super()
-  this.state = { data: [] }
-  //loads the data in a react lifecyle method componentDidMount
-
+  this.state = { data: {} }
 }
   componentDidMount() {
     $.ajax({
@@ -24,26 +18,15 @@ export default class SimpleMap extends Component { constructor() {
         console.log('error getting data')
         console.log(status, err.toString())
       },
+
     })
   }
-  // lifecycle method to clean up after the data call
-  
- // render
+  // render
   render() {
     return (
-     <div className ={'App'}
-      
-      style={{ height: '100%'}}
-      >
-          
-      <MapComponent data = {this.state}> >
-     
-      </MapComponent>
-     </div>
-   
- 
-    
-  )
+     <MapComponent data ={this.state.data} >
+      <Shapes data ={this.props.data} />
+    </MapComponent>
+    )
   }
-  // default properties for the map
 }
